@@ -75,7 +75,7 @@ class UpdateExcerptsCommand extends PackageLoopingCommand {
       try {
         // Ensure that dependencies are available.
         final int pubGetExitCode = await processRunner.runAndStream(
-            'dart', <String>['pub', 'get'],
+            flutterCommand, <String>['pub', 'get'],
             workingDir: example.directory);
         if (pubGetExitCode != 0) {
           return PackageResult.fail(
